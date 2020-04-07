@@ -1,0 +1,12 @@
+<div *ngIf="game">
+    <div style="text-align:center;margin:10px;">
+        <button mat-raised-button color="primary" [routerLink]="['/']" >Save and Quit</button>
+    </div>
+    <mat-grid-list [cols]="game.board.width" rowHeight="100px">
+        <mat-grid-tile *ngFor="let cell of game.board.cells" (click)="uncoverCell(cell)"
+            [style.background]="cell.isUncovered ? (cell.isMine ? 'lightpink': 'lightblue') : 'lightgray'">
+            <mat-icon *ngIf="cell.isUncovered && cell.isMine" aria-hidden="false" aria-label="Mine">highlight_off</mat-icon>
+            <mat-icon *ngIf="cell.isFlag" aria-hidden="false" aria-label="Mine">help_outline</mat-icon>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

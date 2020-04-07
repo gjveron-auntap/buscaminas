@@ -1,0 +1,5 @@
+<div fxLayout="row" fxLayout fxFill fxLayoutAlign="center center" fxLayoutGap="12px">
+    <button mat-raised-button color="primary" (click)="newGame()">New Game</button>
+    <button mat-raised-button color="primary" (click)="continue()" [disabled]="!gameRunning">Continue</button>
+    <button mat-raised-button color="primary" (click)="delete()" [disabled]="!gameRunning">Delete</button>
+</div>

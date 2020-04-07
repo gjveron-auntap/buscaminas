@@ -1,0 +1,26 @@
+{
+  "name": "buscaminas-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node srcserver/express/server.js 80",
+    "test": "cucumber-js",
+    "nodemon": "nodemon srcserver/express/server.js --watch srcserver --watch srcbusiness",
+    "docker-build": "docker build -f Dockerfile -t buscaminas-backend:latest .",
+    "docker-tag-ecs": "docker tag buscaminas-backend:latest 379532238349.dkr.ecr.us-west-2.amazonaws.com/buscaminas-backend:latest",
+    "docker-push-ecs": "docker push 379532238349.dkr.ecr.us-west-2.amazonaws.com/buscaminas-backend"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "cucumber": "^6.0.5",
+    "nodemon": "^2.0.2",
+    "zombie": "^6.1.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
